@@ -26,4 +26,4 @@
 * Email: admin@gmail.com
 * Password: password
 
-<img src="https://camo.githubusercontent.com/710d13fde69ddd3410845367027e1611bc32faaf/687474703a2f2f6f6165776f726b2e636f6d2f6173736574732f312e706e67">
+<img src="http://qatar.com.ua/assets/1.png">

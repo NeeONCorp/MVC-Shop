@@ -9,7 +9,11 @@ Class Db
 
         $dsn = 'mysql:host=' . $params['host'] . ';dbname=' . $params['db'] . ';charset=' . $params['charset'];
 
-        $pdo = new PDO($dsn, $params['user'], $params['pass']);
+        try {
+            $pdo = new PDO($dsn, $params['user'], $params['pass']);
+        } catch (PDOException $e) {
+            die('Подключение не удалось: ' . $e->getMessage());
+        }
 
         return $pdo;
     }
