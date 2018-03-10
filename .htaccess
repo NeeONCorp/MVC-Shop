@@ -1,0 +1,13 @@
+# Настройки кодировки
+AddDefaultCharset UTF-8
+AddCharset utf-8 .js
+
+# Скрываем просмотр директорий
+Options All -Indexes
+
+# Настройка единой точки входа
+RewriteEngine On
+RewriteBase /
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ /index.php

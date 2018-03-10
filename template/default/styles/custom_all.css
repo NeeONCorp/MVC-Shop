@@ -1,0 +1,91 @@
+.benefit {
+    margin-top: 74px;
+}
+
+.benefit_row {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.benefit_col {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.benefit_item {
+    height: 100px;
+    background: #f3f3f3;
+    border-right: solid 1px #FFFFFF;
+    padding-left: 25px;
+}
+
+.benefit_col:last-child .benefit_item {
+    border-right: none;
+}
+
+.benefit_icon i {
+    font-size: 30px;
+    color: #fe4c50;
+}
+
+.benefit_content {
+    padding-left: 22px;
+}
+
+.benefit_content h6 {
+    text-transform: uppercase;
+    line-height: 18px;
+    font-weight: 500;
+    margin-bottom: 0px;
+}
+
+.benefit_content p {
+    font-size: 12px;
+    line-height: 18px;
+    margin-bottom: 0px;
+    color: #51545f;
+}
+
+.btn {
+    padding: 10px 30px !important;
+    cursor: pointer !important;
+}
+
+.contact_container .alert {
+    margin-top: 20px;
+}
+
+.alert button {
+    cursor: pointer;
+}
+
+.card .card-block {
+    padding: .75rem 1.25rem;
+}
+
+.card .card-block .card-text {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.margin_bottom35 {
+    margin-bottom: 35px;
+}
+
+.margin_top35 {
+    margin-top: 35px;
+}
+
+.account_menu {
+    margin-top: 80px;
+}
+
+.account_menu .active {
+    background: #fde0db;
+    color: #FF6347;
+    box-shadow: 2px 1px 3px 1px #0000001f;
+}
+
+.page_history_order .card {
+    margin: 10px 0px;
+}

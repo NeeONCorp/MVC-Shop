@@ -1,0 +1,75 @@
+table td.icon_control a {
+    margin: 0px 7px;
+}
+
+.page-add-product form, .form-horizontal .form-actions,
+.page-order .form-actions,
+.page-add-category form, .form-horizontal .form-actions {
+    margin-bottom: 0;
+}
+
+.page-edit-product .picture button.remove {
+    outline: none;
+    background-repeat: no-repeat;
+    background: white;
+    border: 0;
+    position: absolute;
+    right: -35px;
+    top: 0px;
+    width: 30px;
+    height: 30px;
+}
+
+.page-edit-product .box-picture {
+    display: inline-block;
+    margin-left: 0;
+    margin: 0px 25px;
+}
+
+.page-edit-product .picture {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    border-radius: 4px;
+    box-shadow: 3px 2px 2px 0px #0000003b;
+}
+
+.page-product .table-toolbar,
+.page-categories .table-toolbar {
+    text-align: right;
+    margin-bottom: 25px;
+}
+
+.page-order table#products td {
+    vertical-align: inherit;
+}
+
+.page-order table#products .product_image {
+    width: 70px;
+    height: 70px;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    border-radius: 2px;
+}
+
+.page-orders table td.right,
+.page-users table td.right,
+.page-user table td.right {
+    text-align: right;
+}
+
+.page-order #products_wrapper {
+    margin-top: 25px;
+}
+
+.clear {
+    clear: both;
+}
+
+ul.nav.main-menu .badge {
+    margin-right: 15px;
+}
