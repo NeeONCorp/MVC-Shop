@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.5.2
+-- version 4.6.6deb5
 -- https://www.phpmyadmin.net/
 --
--- Хост: 127.0.0.1:3306
--- Время создания: Мар 10 2018 г., 16:14
--- Версия сервера: 5.5.53
--- Версия PHP: 5.5.38
+-- Хост: localhost
+-- Время создания: Мар 16 2018 г., 22:07
+-- Версия сервера: 5.7.21-0ubuntu0.17.10.1
+-- Версия PHP: 5.6.34-1+ubuntu17.10.1+deb.sury.org+1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- База данных: `ApplicationWithMvc`
+-- База данных: `app-local`
 --
 
 -- --------------------------------------------------------
@@ -69,14 +69,14 @@ INSERT INTO `category` (`id`, `title`, `sort`, `status`) VALUES
 
 CREATE TABLE `order_list` (
   `id` int(11) NOT NULL,
-  `id_user` int(255) NOT NULL,
-  `name` varchar(35) NOT NULL,
-  `number_phone` varchar(13) NOT NULL,
-  `email` varchar(100) NOT NULL,
+  `id_user` int(255) DEFAULT '0',
+  `name` varchar(35) DEFAULT NULL,
+  `number_phone` varchar(13) DEFAULT NULL,
+  `email` varchar(100) DEFAULT NULL,
   `products` longtext NOT NULL,
   `price` float NOT NULL,
   `date` int(20) NOT NULL,
-  `status` int(1) NOT NULL
+  `status` int(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -84,9 +84,8 @@ CREATE TABLE `order_list` (
 --
 
 INSERT INTO `order_list` (`id`, `id_user`, `name`, `number_phone`, `email`, `products`, `price`, `date`, `status`) VALUES
-(1, 1, '', '', '', '{\"15\":1,\"3\":1}', 1449, 1520608969, 3),
-(2, 2, '', '', '', '{\"2\":2}', 598, 1520609145, 1),
-(3, 0, 'Кирилл Бледный', '+380950000000', 'example@gmail.com', '{\"11\":2,\"14\":1}', 1080, 1520609294, 0);
+(1, 1, NULL, NULL, NULL, '{\"13\":1,\"11\":1}', 3820, 1520867712, 1),
+(2, 0, 'Кирилл Абрамович', '+380970570128', 'ewfqqwf@2rar.rr', '{\"10\":1}', 650, 1520867759, 3);
 
 -- --------------------------------------------------------
 
@@ -160,7 +159,7 @@ CREATE TABLE `user` (
   `id` int(11) NOT NULL,
   `name` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
-  `phone_number` varchar(13) NOT NULL,
+  `phone_number` varchar(13) DEFAULT NULL,
   `password` varchar(1000) NOT NULL,
   `register_data` int(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -171,7 +170,8 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id`, `name`, `email`, `phone_number`, `password`, `register_data`) VALUES
 (1, 'Администратор', 'admin@gmail.com', '+380970000000', '$2y$10$TKj0JHDA6yShZ/vQ8O5FBeIo0/LAppsTROutJ8umq03/g.KgQK7YK', 1520603211),
-(2, 'Владислав Кобренко', 'neeon.corp@gmail.com', '', '$2y$10$0Imz.5.kKiCC5ZTmkZSYBera3bf5WGWBmKbgdaiafr.020564JmKC', 1520609040);
+(2, 'Владислав Кобренко', 'neeon.corp@gmail.com', '', '$2y$10$0Imz.5.kKiCC5ZTmkZSYBera3bf5WGWBmKbgdaiafr.020564JmKC', 1520609040),
+(3, 'new user', 'email@eqwqwe.eqw', NULL, '$2y$10$hawRmsGOmCIZS9LX6qGnfePkyAoq.TingclpalfJO8w2GH/5oz9dK', 1520866676);
 
 --
 -- Индексы сохранённых таблиц
@@ -231,7 +231,7 @@ ALTER TABLE `category`
 -- AUTO_INCREMENT для таблицы `order_list`
 --
 ALTER TABLE `order_list`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT для таблицы `order_status`
 --
@@ -246,7 +246,7 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT для таблицы `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

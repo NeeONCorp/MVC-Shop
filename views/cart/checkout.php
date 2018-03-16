@@ -34,7 +34,7 @@
                                 <div class="alert alert-success">
                                     <strong>Отлично!</strong> Заказ оформлен, скоро мы свяжемся с Вами.
                                 </div>
-                                <? } else { ?>
+                                <?php } else { ?>
 
                                     <?php if (is_array($result)) { ?>
                                         <div class="alert alert-danger">
@@ -51,21 +51,21 @@
 
                                             <input id="input_name" class="form_input input_email input_ph" type="text"
                                                    name="checkout_name" placeholder="Имя"
-                                                   value="<?php echo $_POST['checkout_name'] ?>">
+                                                   value="<?php echo $userData['name'] ?>">
                                             <input id="input_name" class="form_input input_name input_ph" type="text"
                                                    name="checkout_phone_number" placeholder="Номер телефона"
-                                                   value="<?php echo $_POST['checkout_phone_number'] ?>">
+                                                   value="<?php echo $userData['phone_number'] ?>">
                                             <input id="input_name" class="form_input input_name input_ph" type="text"
                                                    name="checkout_email" placeholder="Эл. почта"
-                                                   value="<?php echo $_POST['checkout_email'] ?>"">
+                                                   value="<?php echo $userData['email'] ?>"">
 
-                                        <? } ?>
+                                        <?php } ?>
 
                                         <input class="btn btn-primary" type="submit" value="Оформить заказ"
                                                name="checkout">
                                     </form>
 
-                                <? } ?>
+                                <?php } ?>
 
                                 </p>
                             </div>

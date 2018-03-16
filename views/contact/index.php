@@ -74,7 +74,7 @@
                                 <button class="close" data-dismiss="alert">×</button>
                                 <strong>Ошибка!</strong> <?php echo $resultSend[0] ?>
                             </div>
-                        <? } ?>
+                        <?php } ?>
 
                         <form method="post" action="#">
                             <div>

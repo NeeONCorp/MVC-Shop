@@ -3,26 +3,6 @@
 class CabinetController
 {
     /**
-     * Страница "Кабинет"
-     */
-    public function actionIndex()
-    {
-        # Получить Id пользователя или перенаправить на страницу входа
-        $userId = User::checkLogged();
-
-        # Получить данные пользователя
-        $user = User::getUserById($userId);
-
-        # Узнает является ли пользователь администратором
-        $isAdmin = User::isAdmin($userId);
-
-        # Заголовок страницы
-        $page = ['title' => 'Кабинет пользователя'];
-
-        include_once(ROOT . '/views/cabinet/index.php');
-    }
-
-    /**
      * Страница "Кабинет - Редактировать данные"
      */
     public function actionEditPage()
@@ -106,6 +86,12 @@ class CabinetController
 
         # Получить список заказов пользователя
         $orders = User::getOrdersByUserId($id);
+
+//        echo '<pre>';
+//        print_r($orders);
+//        echo '</pre>';
+//
+//        die();
 
         # Навигация для пользователя
         $navigation = App::getContentFile(

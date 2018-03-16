@@ -10,7 +10,7 @@ class CartController
         # Удаляем продукт из корзины
         if (isset($_POST['remove_product'])) {
             $productData = [
-                'id' => $_POST['product_id']
+                'id' => $_POST['product_id'],
             ];
 
             Cart::removeProduct($productData['id']);
@@ -20,7 +20,7 @@ class CartController
         if (isset($_POST['edit_count'])) {
             $editCount = [
                 'id'     => $_POST['edit_count_id'],
-                'action' => $_POST['edit_count_action']
+                'action' => $_POST['edit_count_action'],
             ];
 
             Cart::incrementOrDecrementCountProduct($editCount['id'], $editCount['action']);
@@ -38,9 +38,9 @@ class CartController
         }
 
         # Заголовок страницы
-        $page = ['title' => 'Корзина (' . $countItems . ')'];
+        $page = ['title' => 'Корзина ('.$countItems.')'];
 
-        include_once(ROOT . '/views/cart/index.php');
+        include_once(ROOT.'/views/cart/index.php');
     }
 
     /**
@@ -68,24 +68,30 @@ class CartController
         $result = false;
         $userId = null;
 
+        $userData = [
+            'name'         => '',
+            'phone_number' => '',
+            'email'        => '',
+        ];
+
         if ($countProducts > 0) {
 
             # Получаем userId (если пользователь авторизован)
-            if (!User::isGuest()) $userId = User::checkLogged();
+            if ( ! User::isGuest()) {
+                $userId = User::checkLogged();
+            }
 
             # Разрешаем сделать заказ авторизованным пользователям
             if ($userId > 0) {
                 $userData = ['id' => $userId];
-                $result = true;
+                $result   = true;
             }
 
             # Проверяем данные на корректность от гостей
             if (isset($_POST['checkout'])) {
-                $userData = [
-                    'name'         => $_POST['checkout_name'],
-                    'phone_number' => $_POST['checkout_phone_number'],
-                    'email'        => $_POST['checkout_email']
-                ];
+                $userData['name']         = $_POST['checkout_name'];
+                $userData['phone_number'] = $_POST['checkout_phone_number'];
+                $userData['email']        = $_POST['checkout_email'];
 
                 $result = Cart::checkDataCheckout($userData['name'], $userData['phone_number'], $userData['email']);
             }
@@ -103,7 +109,7 @@ class CartController
         # Заголовок страницы
         $page = ['title' => 'Оформление заказа'];
 
-        include_once(ROOT . '/views/cart/checkout.php');
+        include_once(ROOT.'/views/cart/checkout.php');
 
     }
 }

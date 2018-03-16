@@ -155,9 +155,18 @@ class User
      */
     public static function isGuest()
     {
-        if ($_SESSION['user']['id'] > 0) {
-            return false;
-        } else return true;
+        $result = true;
+
+        if(array_key_exists('user', $_SESSION)) {
+            if(array_key_exists('id', $_SESSION['user'])) {
+                if ($_SESSION['user']['id'] > 0) {
+                    $result = false;
+                }
+            }
+        }
+
+
+        return $result;
     }
 
     /**

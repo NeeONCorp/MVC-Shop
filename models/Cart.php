@@ -16,7 +16,7 @@ class Cart
 
         if ($count < 1) $count = 1;
 
-        if (!is_array($_SESSION['cart'])) {
+        if (empty($_SESSION['cart'])) {
             $_SESSION['cart'] = [];
         }
 
@@ -38,7 +38,7 @@ class Cart
     {
         $count = 0;
 
-        if (is_array($_SESSION['cart'])) {
+        if (isset($_SESSION['cart']) && is_array($_SESSION['cart'])) {
             foreach ($_SESSION['cart'] as $product => $productCount) {
                 $count += $productCount;
             }

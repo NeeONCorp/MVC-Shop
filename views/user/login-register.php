@@ -65,7 +65,7 @@
                                     <button class="close" data-dismiss="alert">×</button>
                                     <strong>Отлично!</strong> Ваш профиль был создан и теперь Вы можете выполнить вход.
                                 </div>
-                            <? } else {
+                            <?php } else {
                                 if (is_array($resultRegister)) { ?>
                                     <div class="alert alert-danger">
                                         <button class="close" data-dismiss="alert">×</button>
@@ -86,8 +86,7 @@
                                                name="register_password1" placeholder="Пароль"
                                                value="<?php echo $register['password1'] ?>">
                                         <input id="input_name" class="form_input input_name input_ph" type="password"
-                                               name="register_password2" placeholder="Повторите пароль"
-                                               value="<?php echo $register[''] ?>">
+                                               name="register_password2" placeholder="Повторите пароль">
                                         <input type="submit" class="btn btn-primary"
                                                value="Зарегистрироваться" name="register">
                                 </form>

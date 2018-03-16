@@ -31,7 +31,7 @@
 
                                 <?php if (count($orders) > 0) { ?>
 
-                                    <? for ($i = 0; $i < count($orders); $i++) { ?>
+                                    <?php for ($i = 0; $i < count($orders); $i++) { ?>
 
                                         <div class="card">
                                             <div class="card-header" role="tab" id="heading<?php echo $i ?>">
@@ -110,9 +110,9 @@
                                             </div>
                                         </div>
 
-                                    <? } ?>
+                                    <?php } ?>
 
-                                <? } else { ?>
+                                <?php } else { ?>
 
                                     <p><?php echo $user['name'] ?>, Ваша история заказов пока что пуста.</p>
 

@@ -7,6 +7,9 @@ class ContactController
      */
     public function actionIndex()
     {
+        $send = ['name' => '', 'email' => '', 'message' => ''];
+        $resultSend = false;
+
         # Сценарий для отправки обратной связи
         if (isset($_POST['send'])) {
             $send = [
